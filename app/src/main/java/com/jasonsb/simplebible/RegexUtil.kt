@@ -10,7 +10,7 @@ class RegexUtil {
         private const val KEYWORD_MATCH = """\*([^*]+)\*"""
         private const val HEADING_MATCH = """\n\s*\n\s*([^\[]+)\n\n"""
         const val FOOTNOTE_SEPARATOR = """\n+"""
-        const val FOOTNOTE_EXPLANATION_MATCH = """([A-Z].+)"""
+        const val FOOTNOTE_EXPLANATION_MATCH = """([A-Z*].+)"""
 
         val verseNumberSpecialChar =
             SpecialChar(first = "[", last = "]", match = VERSE_NUMBER_MATCH)

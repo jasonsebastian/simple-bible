@@ -29,6 +29,9 @@ class EsvParser(private val context: Context) : BaseParser {
                 return SpannableStringBuilder("")
             }
             val footnotes = getFootnotesFromPassage(it)
+            if (debugMode) {
+                debugList(footnotes, heading = "Footnotes:")
+            }
             getRichText(text = removeFootnotes(it), footnotes = footnotes)
         }.reduce { sum, element -> sum.append(element) }.trimEnd()
     }
@@ -41,9 +44,6 @@ class EsvParser(private val context: Context) : BaseParser {
             .trim()
             .split(FOOTNOTE_SEPARATOR.toRegex())
             .map { it.trim() }
-        if (debugMode) {
-            debugList(footnoteText, heading = "Footnote text:")
-        }
         return footnoteText.map {
             Footnote(
                 index = findOccurrence(
