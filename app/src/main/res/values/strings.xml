@@ -1,0 +1,8 @@
+<resources>
+  <string name="app_name">Simple Bible</string>
+  <string name="search">Search</string>
+  <string name="enter_passage">Enter passage</string>
+  <string name="error_msg">Sorry, we didn’t find any results for your search.</string>
+  <string name="no_footnote_entry_found">No footnote entry found</string>
+  <string name="something_went_wrong">Something went wrong.</string>
+</resources>
